@@ -65,6 +65,8 @@ services:
       - GF_SECURITY_ADMIN_USER=${ADMIN_USER:-admin}
       - GF_SECURITY_ADMIN_PASSWORD=${ADMIN_PASSWORD:-admin}
       - GF_USERS_ALLOW_SIGN_UP=false
+      - GF_AUTH_ANONYMOUS_ENABLED=true
+      - GF_AUTH_ANONYMOUS_ORG_NAME=Envea
       #- GF_SERVER_ROOT_URL=${GF_SERVER_ROOT_URL:-localhost}
       #- GF_SMTP_ENABLED=${GF_SMTP_ENABLED:-false}
       #- GF_SMTP_FROM_ADDRESS=${GF_SMTP_FROM_ADDRESS:-grafana@test.com}
@@ -153,7 +155,7 @@ services:
     command:
       - '--config.file=/etc/prometheus/prometheus.yml'
       - '--storage.tsdb.path=/prometheus'
-      - '--storage.tsdb.retention=24h'
+      - '--storage.tsdb.retention=30d'
     volumes:
       - prometheus:/prometheus
     configs:
