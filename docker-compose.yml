@@ -149,7 +149,7 @@ services:
           memory: 64M
 
   prometheus:
-    image: stefanprodan/swarmprom-prometheus:v2.5.0
+    image: phfouquet/swarmprom-prometheus
     networks:
       - net
     command:
