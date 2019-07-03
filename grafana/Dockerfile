@@ -7,4 +7,5 @@ COPY dashboards /etc/grafana/dashboards/
 
 ENV GF_SECURITY_ADMIN_PASSWORD=admin \
     GF_SECURITY_ADMIN_USER=admin \
-    GF_PATHS_PROVISIONING=/etc/grafana/provisioning/
+    GF_PATHS_PROVISIONING=/etc/grafana/provisioning/ \
+    GF_INSTALL_PLUGINS=corpglory-progresslist-panel,simpod-json-datasource

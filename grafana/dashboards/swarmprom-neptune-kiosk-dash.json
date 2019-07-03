@@ -1,0 +1,797 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": "-- Grafana --",
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "limit": 100,
+        "name": "Annotations & Alerts",
+        "showIn": 0,
+        "type": "dashboard"
+      }
+    ]
+  },
+  "description": "Neptune metrics",
+  "editable": true,
+  "gnetId": null,
+  "graphTooltip": 0,
+  "id": 5,
+  "links": [],
+  "panels": [
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a"
+      ],
+      "datasource": null,
+      "decimals": 0,
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 4,
+        "x": 0,
+        "y": 0
+      },
+      "hideTimeOverride": true,
+      "id": 31,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": true
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "expr": "sum(count_ARM7{})/2\n+sum(count_ARM20{})/2\n+sum(count_ARM7p{})/2\n+sum(count_Other{})/2",
+          "format": "time_series",
+          "hide": false,
+          "intervalFactor": 1,
+          "refId": "A"
+        }
+      ],
+      "thresholds": "",
+      "timeFrom": "1d",
+      "title": "Analyzer on network",
+      "type": "singlestat",
+      "valueFontSize": "80%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "current"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "#fce2de",
+        "#cca300",
+        "#1f78c1"
+      ],
+      "datasource": "neptune_db",
+      "format": "none",
+      "gauge": {
+        "maxValue": 97,
+        "minValue": 0,
+        "show": true,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 4,
+        "x": 4,
+        "y": 0
+      },
+      "hideTimeOverride": true,
+      "id": 21,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": false
+      },
+      "tableColumn": "COUNT(IDAnalyseur)",
+      "targets": [
+        {
+          "alias": "",
+          "expr": "",
+          "format": "table",
+          "intervalFactor": 1,
+          "rawSql": "SELECT COUNT(IDAnalyseur) FROM applicationqm",
+          "refId": "A"
+        }
+      ],
+      "thresholds": "20,40",
+      "timeFrom": "1m",
+      "title": "Analyzer in test",
+      "type": "singlestat",
+      "valueFontSize": "80%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "avg"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "#fce2de",
+        "#cca300",
+        "#1f78c1"
+      ],
+      "datasource": "neptune_db",
+      "format": "none",
+      "gauge": {
+        "maxValue": 35,
+        "minValue": 0,
+        "show": true,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 8,
+        "y": 0
+      },
+      "hideTimeOverride": true,
+      "id": 32,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": false
+      },
+      "tableColumn": "COUNT(IDAnalyseur)",
+      "targets": [
+        {
+          "alias": "",
+          "expr": "",
+          "format": "table",
+          "hide": false,
+          "intervalFactor": 1,
+          "rawSql": "SELECT COUNT(IDAnalyseur) FROM serieqm WHERE QMStatus = 1 ",
+          "refId": "A"
+        }
+      ],
+      "thresholds": "3,5",
+      "timeFrom": "1m",
+      "title": "Analyzer double check",
+      "type": "singlestat",
+      "valueFontSize": "80%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "avg"
+    },
+    {
+      "columns": [],
+      "datasource": "neptune_db",
+      "fontSize": "100%",
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 0
+      },
+      "id": 44,
+      "links": [],
+      "pageSize": null,
+      "scroll": true,
+      "showHeader": true,
+      "sort": {
+        "col": 0,
+        "desc": true
+      },
+      "styles": [
+        {
+          "alias": "Time",
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "pattern": "Time",
+          "type": "date"
+        },
+        {
+          "alias": "",
+          "colorMode": null,
+          "colors": [
+            "rgba(50, 172, 45, 0.97)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(245, 54, 54, 0.9)"
+          ],
+          "decimals": 0,
+          "link": false,
+          "pattern": "/.*/",
+          "thresholds": [],
+          "type": "number",
+          "unit": "short"
+        }
+      ],
+      "targets": [
+        {
+          "alias": "",
+          "expr": "",
+          "format": "table",
+          "hide": false,
+          "intervalFactor": 1,
+          "rawSql": "SELECT 'MP101M' as 'Analyser', 25 as 'Testing place'",
+          "refId": "A"
+        },
+        {
+          "alias": "",
+          "format": "table",
+          "rawSql": "SELECT REGEXP_REPLACE(def.NomAnalyseur, \"_Bc\", \"\") as 'Analyser', SUM(rack.nbplace) as 'Testing place'\n\t\t\t\tFROM\n\t\t\t\t    listedefinitionanalyseur AS def,\n\t\t\t\t    qmrack as rack\n\t\t\t\tWHERE\n\t\t\t\t    rack.idtypeapp = def.idanalyseur\nGROUP BY NomAnalyseur, rack.nbplace, rack.idtypeapp",
+          "refId": "B"
+        },
+        {
+          "alias": "",
+          "format": "table",
+          "rawSql": "SELECT NomAnalyseur as 'Analyser', COUNT(IDAnalyseur) as 'In test'\nFROM\n(SELECT qm.IDAnalyseur, def.NomAnalyseur\n\t\t\t\tFROM\n\t\t\t\t    applicationqm as qm,\n\t\t\t\t    listeanalyseur as lst,\n\t\t\t\t    listeaffectation AS lsta,\n\t\t\t\t    listedefinitionanalyseur AS def,\n            apprack AS rack,\n            qmrack AS qmr\n\t\t\t\tWHERE\n\t\t\t\t    qm.IDanalyseur = lsta.NoSerieARM\n\t\t\t\t    AND lsta.NoSerieAnalyseur = lst.keyanalyseur\n\t\t\t\t    AND lst.IDanalyseur = def.idanalyseur\n            AND rack.idserieqm = qm.IDAnalyseur\n            AND qmr.id = rack.idRack\n            AND (qmr.visurack = 0 OR qmr.visurack IS null)\nGROUP BY qm.IDAnalyseur, def.NomAnalyseur) AS TOTO\nGROUP BY NomAnalyseur",
+          "refId": "C"
+        },
+        {
+          "alias": "",
+          "expr": "",
+          "format": "table",
+          "hide": false,
+          "intervalFactor": 1,
+          "rawSql": "SELECT\n\"CNH3e\" AS 'Analyser',\nROUND (   \n        (\n            LENGTH(toto.Variable)\n            - LENGTH( REPLACE ( toto.Variable, \"CNH3-\", \"\") ) \n        ) / LENGTH(\"CNH3-\")        \n    ) AS 'In test' \nFROM\n(SELECT qm.IDAnalyseur , qm.Variable\n\t\t\t\tFROM\n\t\t\t\t    applicationqm as qm,\n\t\t\t\t    listeanalyseur as lst,\n\t\t\t\t    listeaffectation AS lsta,\n\t\t\t\t    listedefinitionanalyseur AS def,\n            apprack AS rack,\n            qmrack AS qmr\n\t\t\t\tWHERE\n\t\t\t\t    qm.IDanalyseur = lsta.NoSerieARM\n\t\t\t\t    AND lsta.NoSerieAnalyseur = lst.keyanalyseur\n\t\t\t\t    AND lst.IDanalyseur = def.idanalyseur\n            AND rack.idserieqm = qm.IDAnalyseur\n            AND qmr.id = rack.idRack\n            AND def.NomAnalyseur LIKE '%NH3%'\nGROUP BY qm.IDAnalyseur, qm.Variable) AS toto",
+          "refId": "D"
+        },
+        {
+          "alias": "",
+          "format": "table",
+          "rawSql": "SELECT\n\"CTRSe\" AS 'Analyser',\nROUND (   \n        (\n            LENGTH(toto.Variable)\n            - LENGTH( REPLACE ( toto.Variable, \"CTRS-\", \"\") ) \n        ) / LENGTH(\"CNH3-\")        \n    ) AS 'In test' \nFROM\n(SELECT qm.IDAnalyseur , qm.Variable\n\t\t\t\tFROM\n\t\t\t\t    applicationqm as qm,\n\t\t\t\t    listeanalyseur as lst,\n\t\t\t\t    listeaffectation AS lsta,\n\t\t\t\t    listedefinitionanalyseur AS def,\n            apprack AS rack,\n            qmrack AS qmr\n\t\t\t\tWHERE\n\t\t\t\t    qm.IDanalyseur = lsta.NoSerieARM\n\t\t\t\t    AND lsta.NoSerieAnalyseur = lst.keyanalyseur\n\t\t\t\t    AND lst.IDanalyseur = def.idanalyseur\n            AND rack.idserieqm = qm.IDAnalyseur\n            AND qmr.id = rack.idRack\n            AND def.NomAnalyseur LIKE '%CTRS%'\nGROUP BY qm.IDAnalyseur, qm.Variable) AS toto",
+          "refId": "H"
+        },
+        {
+          "alias": "",
+          "format": "table",
+          "rawSql": "SELECT NomAnalyseur as 'Analyser', COUNT(IDAnalyseur) as 'In test'\nFROM\n(SELECT qm.IDAnalyseur, def.NomAnalyseur\n\t\t\t\tFROM\n\t\t\t\t    applicationqm as qm,\n\t\t\t\t    listeanalyseur as lst,\n\t\t\t\t    listeaffectation AS lsta,\n\t\t\t\t    listedefinitionanalyseur AS def\n\t\t\t\tWHERE\n\t\t\t\t    qm.IDanalyseur = lsta.NoSerieARM\n\t\t\t\t    AND lsta.NoSerieAnalyseur = lst.keyanalyseur\n\t\t\t\t    AND lst.IDanalyseur = def.idanalyseur\n\t\t\t\t    AND def.NomAnalyseur = \"MP101M\"\nGROUP BY qm.IDAnalyseur, def.NomAnalyseur) AS TOTO\nGROUP BY NomAnalyseur",
+          "refId": "E"
+        },
+        {
+          "alias": "",
+          "expr": "",
+          "format": "table",
+          "hide": false,
+          "intervalFactor": 1,
+          "rawSql": "SELECT REGEXP_REPLACE(NomAnalyseur, \"_Bc\", \"\") as 'Analyser', COUNT(IDAnalyseur) as 'Double check'\nFROM\n(SELECT qm.IDAnalyseur, def.NomAnalyseur\n\t\t\t\tFROM\n\t\t\t\t    serieqm as qm,\n\t\t\t\t    listeanalyseur as lst,\n\t\t\t\t    listedefinitionanalyseur AS def\n\t\t\t\tWHERE\n\t\t\t\t    qm.IDanalyseur = lst.KeyAnalyseur\n\t\t\t\t    AND lst.IDanalyseur = def.idanalyseur\n            AND qm.QMStatus = 1\n) AS TOTO\nGROUP BY NomAnalyseur",
+          "refId": "F"
+        },
+        {
+          "alias": "",
+          "expr": "",
+          "format": "table",
+          "hide": false,
+          "intervalFactor": 1,
+          "rawSql": "SELECT REGEXP_REPLACE(NomAnalyseur, \"_Bc\", \"\") as 'Analyser', COUNT(IDAnalyseur) as 'To be verified'\nFROM\n(SELECT qm.IDAnalyseur, def.NomAnalyseur\n\t\t\t\tFROM\n\t\t\t\t    serieqm as qm,\n\t\t\t\t    listeanalyseur as lst,\n\t\t\t\t    listedefinitionanalyseur AS def\n\t\t\t\tWHERE\n\t\t\t\t    qm.IDanalyseur = lst.KeyAnalyseur\n\t\t\t\t    AND lst.IDanalyseur = def.idanalyseur\n            AND qm.QMStatus = 2\n) AS TOTO\nGROUP BY NomAnalyseur",
+          "refId": "G"
+        }
+      ],
+      "title": "Occupancy rate",
+      "transform": "table",
+      "type": "table"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "#fce2de",
+        "#cca300",
+        "#1f78c1"
+      ],
+      "datasource": "neptune_db",
+      "format": "none",
+      "gauge": {
+        "maxValue": 35,
+        "minValue": 0,
+        "show": true,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 8,
+        "y": 4
+      },
+      "hideTimeOverride": true,
+      "id": 33,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": false
+      },
+      "tableColumn": "COUNT(IDAnalyseur)",
+      "targets": [
+        {
+          "alias": "",
+          "expr": "",
+          "format": "table",
+          "hide": false,
+          "intervalFactor": 1,
+          "rawSql": "SELECT COUNT(IDAnalyseur) FROM serieqm WHERE QMStatus = 2",
+          "refId": "A"
+        }
+      ],
+      "thresholds": "15,30",
+      "timeFrom": "1m",
+      "title": "Analyzer to be verified",
+      "type": "singlestat",
+      "valueFontSize": "80%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "avg"
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "neptune_db",
+      "fill": 0,
+      "gridPos": {
+        "h": 9,
+        "w": 24,
+        "x": 0,
+        "y": 8
+      },
+      "hideTimeOverride": false,
+      "id": 35,
+      "legend": {
+        "alignAsTable": true,
+        "avg": true,
+        "current": true,
+        "hideEmpty": false,
+        "hideZero": false,
+        "max": true,
+        "min": true,
+        "rightSide": true,
+        "show": true,
+        "sideWidth": 300,
+        "sort": "current",
+        "sortDesc": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 2,
+      "links": [],
+      "nullPointMode": "null as zero",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "alias": "",
+          "expr": "SELECT *, ((tmp.valid/tmp.nb)*100.0) as percent FROM \n\t\t\t\t(SELECT\n\t\t\t\t\tDATE_FORMAT(qm.dateQM, \"%Y-%m\") as dt,\n\t\t\t\t\tSUM(IF(qm.qmstatus=0,1,0)) as valid,\n\t\t\t\t\tSUM(IF(qm.qmstatus=3,1,0)) as rem,\n\t\t\t\t\tcount(qm.qmstatus) AS nb\n\t\t\t\tFROM\n\t\t\t\t    serieqm as qm,\n\t\t\t\t    listeanalyseur as lst,\n\t\t\t\t    listedefinitionanalyseur AS def\n\t\t\t\tWHERE\n\t\t\t\t    qm.IDanalyseur = lst.keyanalyseur\n\t\t\t\t    AND lst.IDanalyseur = def.idanalyseur\n        GROUP BY dt) AS tmp",
+          "format": "time_series",
+          "hide": false,
+          "intervalFactor": 1,
+          "rawSql": "SELECT STR_TO_DATE(dt, \"%Y-%m-%d\") AS time_sec, ((tmp.valid/(tmp.valid+tmp.rem))*100.0) as 'All' FROM \n\t\t\t\t(SELECT\n\t\t\t\t\tDATE_FORMAT(qm.dateQM, \"%Y-%m-01\") as dt,\n\t\t\t\t\tSUM(IF(qm.qmstatus=0,1,0)) as valid,\n\t\t\t\t\tSUM(IF(qm.qmstatus=3,1,0)) as rem,\n\t\t\t\t\tcount(qm.qmstatus) AS nb\n\t\t\t\tFROM\n\t\t\t\t    serieqm as qm,\n\t\t\t\t    listeanalyseur as lst,\n\t\t\t\t    listedefinitionanalyseur AS def\n\t\t\t\tWHERE\n\t\t\t\t    qm.IDanalyseur = lst.keyanalyseur\n\t\t\t\t    AND lst.IDanalyseur = def.idanalyseur\n\t\t\t\t    AND qm.dateQM >= $__timeFrom()\n        GROUP BY dt) AS tmp",
+          "refId": "A"
+        },
+        {
+          "alias": "",
+          "format": "time_series",
+          "rawSql": "SELECT fulldata.time_sec,  AC32e FROM\n(SELECT STR_TO_DATE(DATE_FORMAT(qm.dateQM, \"%Y-%m-01\"), \"%Y-%m-%d\") AS time_sec FROM serieqm as qm WHERE qm.dateQM >= $__timeFrom() GROUP BY time_sec) AS fulldata\nLEFT JOIN\n(SELECT STR_TO_DATE(dt, \"%Y-%m-%d\") AS time_sec, ((tmp.valid/(tmp.valid+tmp.rem))*100.0) as 'AC32e' FROM \n\t\t\t\t(SELECT\n\t\t\t\t\tDATE_FORMAT(qm.dateQM, \"%Y-%m-01\") as dt,\n\t\t\t\t\tSUM(IF(qm.qmstatus=0,1,0)) as valid,\n\t\t\t\t\tSUM(IF(qm.qmstatus=3,1,0)) as rem,\n\t\t\t\t\tcount(qm.qmstatus) AS nb\n\t\t\t\tFROM\n\t\t\t\t    serieqm as qm,\n\t\t\t\t    listeanalyseur as lst,\n\t\t\t\t    listedefinitionanalyseur AS def\n\t\t\t\tWHERE\n\t\t\t\t    qm.IDanalyseur = lst.keyanalyseur\n\t\t\t\t    AND lst.IDanalyseur = def.idanalyseur\n\t\t\t\t    AND qm.dateQM >= $__timeFrom()\n\t\t\t\t    AND def.NomAnalyseur = \"AC32e\"\n        GROUP BY dt) AS tmp) AS filterdata\nON fulldata.time_sec = filterdata.time_sec ORDER BY time_sec",
+          "refId": "B"
+        },
+        {
+          "alias": "",
+          "format": "time_series",
+          "hide": false,
+          "rawSql": "SELECT fulldata.time_sec,  AF22e FROM\n(SELECT STR_TO_DATE(DATE_FORMAT(qm.dateQM, \"%Y-%m-01\"), \"%Y-%m-%d\") AS time_sec FROM serieqm as qm WHERE qm.dateQM >= $__timeFrom() GROUP BY time_sec) AS fulldata\nLEFT JOIN\n(SELECT STR_TO_DATE(dt, \"%Y-%m-%d\") AS time_sec, ((tmp.valid/(tmp.valid+tmp.rem))*100.0) as 'AF22e' FROM \n\t\t\t\t(SELECT\n\t\t\t\t\tDATE_FORMAT(qm.dateQM, \"%Y-%m-01\") as dt,\n\t\t\t\t\tSUM(IF(qm.qmstatus=0,1,0)) as valid,\n\t\t\t\t\tSUM(IF(qm.qmstatus=3,1,0)) as rem,\n\t\t\t\t\tcount(qm.qmstatus) AS nb\n\t\t\t\tFROM\n\t\t\t\t    serieqm as qm,\n\t\t\t\t    listeanalyseur as lst,\n\t\t\t\t    listedefinitionanalyseur AS def\n\t\t\t\tWHERE\n\t\t\t\t    qm.IDanalyseur = lst.keyanalyseur\n\t\t\t\t    AND lst.IDanalyseur = def.idanalyseur\n\t\t\t\t    AND qm.dateQM >= $__timeFrom()\n\t\t\t\t    AND def.NomAnalyseur = \"AF22e\"\n        GROUP BY dt) AS tmp) AS filterdata\nON fulldata.time_sec = filterdata.time_sec ORDER BY time_sec",
+          "refId": "C"
+        },
+        {
+          "alias": "",
+          "format": "time_series",
+          "hide": false,
+          "rawSql": "SELECT fulldata.time_sec,  CO12e FROM\n(SELECT STR_TO_DATE(DATE_FORMAT(qm.dateQM, \"%Y-%m-01\"), \"%Y-%m-%d\") AS time_sec FROM serieqm as qm WHERE qm.dateQM >= $__timeFrom() GROUP BY time_sec) AS fulldata\nLEFT JOIN\n(SELECT STR_TO_DATE(dt, \"%Y-%m-%d\") AS time_sec, ((tmp.valid/(tmp.valid+tmp.rem))*100.0) as 'CO12e' FROM \n\t\t\t\t(SELECT\n\t\t\t\t\tDATE_FORMAT(qm.dateQM, \"%Y-%m-01\") as dt,\n\t\t\t\t\tSUM(IF(qm.qmstatus=0,1,0)) as valid,\n\t\t\t\t\tSUM(IF(qm.qmstatus=3,1,0)) as rem,\n\t\t\t\t\tcount(qm.qmstatus) AS nb\n\t\t\t\tFROM\n\t\t\t\t    serieqm as qm,\n\t\t\t\t    listeanalyseur as lst,\n\t\t\t\t    listedefinitionanalyseur AS def\n\t\t\t\tWHERE\n\t\t\t\t    qm.IDanalyseur = lst.keyanalyseur\n\t\t\t\t    AND lst.IDanalyseur = def.idanalyseur\n\t\t\t\t    AND qm.dateQM >= $__timeFrom()\n\t\t\t\t    AND def.NomAnalyseur = \"CO12e\"\n        GROUP BY dt) AS tmp) AS filterdata\nON fulldata.time_sec = filterdata.time_sec ORDER BY time_sec",
+          "refId": "D"
+        },
+        {
+          "alias": "",
+          "format": "time_series",
+          "hide": false,
+          "rawSql": "SELECT fulldata.time_sec,  MP101M FROM\n(SELECT STR_TO_DATE(DATE_FORMAT(qm.dateQM, \"%Y-%m-01\"), \"%Y-%m-%d\") AS time_sec FROM serieqm as qm WHERE qm.dateQM >= $__timeFrom() GROUP BY time_sec) AS fulldata\nLEFT JOIN\n(SELECT STR_TO_DATE(dt, \"%Y-%m-%d\") AS time_sec, ((tmp.valid/(tmp.valid+tmp.rem))*100.0) as 'MP101M' FROM \n\t\t\t\t(SELECT\n\t\t\t\t\tDATE_FORMAT(qm.dateQM, \"%Y-%m-01\") as dt,\n\t\t\t\t\tSUM(IF(qm.qmstatus=0,1,0)) as valid,\n\t\t\t\t\tSUM(IF(qm.qmstatus=3,1,0)) as rem,\n\t\t\t\t\tcount(qm.qmstatus) AS nb\n\t\t\t\tFROM\n\t\t\t\t    serieqm as qm,\n\t\t\t\t    listeanalyseur as lst,\n\t\t\t\t    listedefinitionanalyseur AS def\n\t\t\t\tWHERE\n\t\t\t\t    qm.IDanalyseur = lst.keyanalyseur\n\t\t\t\t    AND lst.IDanalyseur = def.idanalyseur\n\t\t\t\t    AND qm.dateQM >= $__timeFrom()\n\t\t\t\t    AND def.NomAnalyseur = \"MP101M\"\n        GROUP BY dt) AS tmp) AS filterdata\nON fulldata.time_sec = filterdata.time_sec ORDER BY time_sec",
+          "refId": "E"
+        },
+        {
+          "alias": "",
+          "format": "time_series",
+          "hide": false,
+          "rawSql": "SELECT fulldata.time_sec,  O342e FROM\n(SELECT STR_TO_DATE(DATE_FORMAT(qm.dateQM, \"%Y-%m-01\"), \"%Y-%m-%d\") AS time_sec FROM serieqm as qm WHERE qm.dateQM >= $__timeFrom() GROUP BY time_sec) AS fulldata\nLEFT JOIN\n(SELECT STR_TO_DATE(dt, \"%Y-%m-%d\") AS time_sec, ((tmp.valid/(tmp.valid+tmp.rem))*100.0) as 'O342e' FROM \n\t\t\t\t(SELECT\n\t\t\t\t\tDATE_FORMAT(qm.dateQM, \"%Y-%m-01\") as dt,\n\t\t\t\t\tSUM(IF(qm.qmstatus=0,1,0)) as valid,\n\t\t\t\t\tSUM(IF(qm.qmstatus=3,1,0)) as rem,\n\t\t\t\t\tcount(qm.qmstatus) AS nb\n\t\t\t\tFROM\n\t\t\t\t    serieqm as qm,\n\t\t\t\t    listeanalyseur as lst,\n\t\t\t\t    listedefinitionanalyseur AS def\n\t\t\t\tWHERE\n\t\t\t\t    qm.IDanalyseur = lst.keyanalyseur\n\t\t\t\t    AND lst.IDanalyseur = def.idanalyseur\n\t\t\t\t    AND qm.dateQM >= $__timeFrom()\n\t\t\t\t    AND def.NomAnalyseur = \"O342e\"\n        GROUP BY dt) AS tmp) AS filterdata\nON fulldata.time_sec = filterdata.time_sec ORDER BY time_sec",
+          "refId": "F"
+        },
+        {
+          "alias": "",
+          "format": "time_series",
+          "hide": false,
+          "rawSql": "SELECT fulldata.time_sec,  CNH3e FROM\n(SELECT STR_TO_DATE(DATE_FORMAT(qm.dateQM, \"%Y-%m-01\"), \"%Y-%m-%d\") AS time_sec FROM serieqm as qm WHERE qm.dateQM >= $__timeFrom() GROUP BY time_sec) AS fulldata\nLEFT JOIN\n(SELECT STR_TO_DATE(dt, \"%Y-%m-%d\") AS time_sec, ((tmp.valid/(tmp.valid+tmp.rem))*100.0) as 'CNH3e' FROM \n\t\t\t\t(SELECT\n\t\t\t\t\tDATE_FORMAT(qm.dateQM, \"%Y-%m-01\") as dt,\n\t\t\t\t\tSUM(IF(qm.qmstatus=0,1,0)) as valid,\n\t\t\t\t\tSUM(IF(qm.qmstatus=3,1,0)) as rem,\n\t\t\t\t\tcount(qm.qmstatus) AS nb\n\t\t\t\tFROM\n\t\t\t\t    serieqm as qm,\n\t\t\t\t    listeanalyseur as lst,\n\t\t\t\t    listedefinitionanalyseur AS def\n\t\t\t\tWHERE\n\t\t\t\t    qm.IDanalyseur = lst.keyanalyseur\n\t\t\t\t    AND lst.IDanalyseur = def.idanalyseur\n\t\t\t\t    AND qm.dateQM >= $__timeFrom()\n\t\t\t\t    AND def.NomAnalyseur = \"CNH3e\"\n        GROUP BY dt) AS tmp) AS filterdata\nON fulldata.time_sec = filterdata.time_sec ORDER BY time_sec",
+          "refId": "G"
+        },
+        {
+          "alias": "",
+          "format": "time_series",
+          "rawSql": "SELECT fulldata.time_sec,  CTRSe FROM\n(SELECT STR_TO_DATE(DATE_FORMAT(qm.dateQM, \"%Y-%m-01\"), \"%Y-%m-%d\") AS time_sec FROM serieqm as qm WHERE qm.dateQM >= $__timeFrom() GROUP BY time_sec) AS fulldata\nLEFT JOIN\n(SELECT STR_TO_DATE(dt, \"%Y-%m-%d\") AS time_sec, ((tmp.valid/(tmp.valid+tmp.rem))*100.0) as 'CTRSe' FROM \n\t\t\t\t(SELECT\n\t\t\t\t\tDATE_FORMAT(qm.dateQM, \"%Y-%m-01\") as dt,\n\t\t\t\t\tSUM(IF(qm.qmstatus=0,1,0)) as valid,\n\t\t\t\t\tSUM(IF(qm.qmstatus=3,1,0)) as rem,\n\t\t\t\t\tcount(qm.qmstatus) AS nb\n\t\t\t\tFROM\n\t\t\t\t    serieqm as qm,\n\t\t\t\t    listeanalyseur as lst,\n\t\t\t\t    listedefinitionanalyseur AS def\n\t\t\t\tWHERE\n\t\t\t\t    qm.IDanalyseur = lst.keyanalyseur\n\t\t\t\t    AND lst.IDanalyseur = def.idanalyseur\n\t\t\t\t    AND qm.dateQM >= $__timeFrom()\n\t\t\t\t    AND def.NomAnalyseur = \"CTRSe\"\n        GROUP BY dt) AS tmp) AS filterdata\nON fulldata.time_sec = filterdata.time_sec ORDER BY time_sec",
+          "refId": "H"
+        }
+      ],
+      "thresholds": [
+        {
+          "colorMode": "warning",
+          "fill": false,
+          "line": true,
+          "op": "lt",
+          "value": 75,
+          "yaxis": "left"
+        }
+      ],
+      "timeFrom": "1y",
+      "timeShift": null,
+      "title": "Activity per analyzer",
+      "tooltip": {
+        "shared": true,
+        "sort": 2,
+        "value_type": "individual"
+      },
+      "transparent": false,
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "percent",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": false
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": true,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "neptune_db",
+      "decimals": null,
+      "fill": 5,
+      "gridPos": {
+        "h": 9,
+        "w": 24,
+        "x": 0,
+        "y": 17
+      },
+      "hideTimeOverride": false,
+      "id": 40,
+      "legend": {
+        "alignAsTable": true,
+        "avg": true,
+        "current": true,
+        "hideEmpty": false,
+        "hideZero": false,
+        "max": true,
+        "min": true,
+        "rightSide": true,
+        "show": true,
+        "sideWidth": 300,
+        "sort": "current",
+        "sortDesc": true,
+        "total": false,
+        "values": true
+      },
+      "lines": false,
+      "linewidth": 2,
+      "links": [],
+      "nullPointMode": "null as zero",
+      "percentage": false,
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [
+        {
+          "alias": "Cumul",
+          "stack": false
+        }
+      ],
+      "spaceLength": 10,
+      "stack": true,
+      "steppedLine": false,
+      "targets": [
+        {
+          "alias": "",
+          "format": "time_series",
+          "rawSql": "SELECT fulldata.time_sec, Cumul FROM\n(SELECT STR_TO_DATE(DATE_FORMAT(qm.dateQM, \"%Y-%m-01\"), \"%Y-%m-%d\") AS time_sec FROM serieqm as qm WHERE qm.dateQM >= $__timeFrom() GROUP BY time_sec) AS fulldata\nLEFT JOIN\n(SELECT STR_TO_DATE(DATE_FORMAT(qm.dateQM, \"%Y-%m-01\"), \"%Y-%m-%d\") AS time_sec, COUNT(lst.keyanalyseur) as 'Cumul'\n\t\t\t\tFROM\n\t\t\t\t    serieqm as qm,\n\t\t\t\t    listeanalyseur as lst,\n\t\t\t\t    listedefinitionanalyseur AS def\n\t\t\t\tWHERE\n\t\t\t\t    qm.QMStatus = 0\n\t\t\t\t    AND qm.IDanalyseur = lst.keyanalyseur\n\t\t\t\t    AND lst.IDanalyseur = def.idanalyseur\n\t\t\t\t    AND qm.dateQM >= $__timeFrom()\n        GROUP BY time_sec) AS filterdata\nON fulldata.time_sec = filterdata.time_sec ORDER BY time_sec",
+          "refId": "A"
+        },
+        {
+          "alias": "",
+          "format": "time_series",
+          "rawSql": "SELECT fulldata.time_sec,  AC32e FROM\n(SELECT STR_TO_DATE(DATE_FORMAT(qm.dateQM, \"%Y-%m-01\"), \"%Y-%m-%d\") AS time_sec FROM serieqm as qm WHERE qm.dateQM >= $__timeFrom() GROUP BY time_sec) AS fulldata\nLEFT JOIN\n(SELECT STR_TO_DATE(DATE_FORMAT(qm.dateQM, \"%Y-%m-01\"), \"%Y-%m-%d\") AS time_sec, COUNT(lst.keyanalyseur) as 'AC32e'\n\t\t\t\tFROM\n\t\t\t\t    serieqm as qm,\n\t\t\t\t    listeanalyseur as lst,\n\t\t\t\t    listedefinitionanalyseur AS def\n\t\t\t\tWHERE\n\t\t\t\t    qm.QMStatus = 0\n\t\t\t\t    AND qm.IDanalyseur = lst.keyanalyseur\n\t\t\t\t    AND lst.IDanalyseur = def.idanalyseur\n\t\t\t\t    AND qm.dateQM >= $__timeFrom()\n\t\t\t\t    AND def.NomAnalyseur = \"AC32e\"\n        GROUP BY time_sec) AS filterdata\nON fulldata.time_sec = filterdata.time_sec ORDER BY time_sec",
+          "refId": "B"
+        },
+        {
+          "alias": "",
+          "format": "time_series",
+          "rawSql": "SELECT fulldata.time_sec,  AF22e FROM\n(SELECT STR_TO_DATE(DATE_FORMAT(qm.dateQM, \"%Y-%m-01\"), \"%Y-%m-%d\") AS time_sec FROM serieqm as qm WHERE qm.dateQM >= $__timeFrom() GROUP BY time_sec) AS fulldata\nLEFT JOIN\n(SELECT STR_TO_DATE(DATE_FORMAT(qm.dateQM, \"%Y-%m-01\"), \"%Y-%m-%d\") AS time_sec, COUNT(lst.keyanalyseur) as 'AF22e'\n\t\t\t\tFROM\n\t\t\t\t    serieqm as qm,\n\t\t\t\t    listeanalyseur as lst,\n\t\t\t\t    listedefinitionanalyseur AS def\n\t\t\t\tWHERE\n\t\t\t\t    qm.QMStatus = 0\n\t\t\t\t    AND qm.IDanalyseur = lst.keyanalyseur\n\t\t\t\t    AND lst.IDanalyseur = def.idanalyseur\n\t\t\t\t    AND qm.dateQM >= $__timeFrom()\n\t\t\t\t    AND def.NomAnalyseur = \"AF22e\"\n        GROUP BY time_sec) AS filterdata\nON fulldata.time_sec = filterdata.time_sec ORDER BY time_sec",
+          "refId": "C"
+        },
+        {
+          "alias": "",
+          "format": "time_series",
+          "rawSql": "SELECT fulldata.time_sec,  CO12e FROM\n(SELECT STR_TO_DATE(DATE_FORMAT(qm.dateQM, \"%Y-%m-01\"), \"%Y-%m-%d\") AS time_sec FROM serieqm as qm WHERE qm.dateQM >= $__timeFrom() GROUP BY time_sec) AS fulldata\nLEFT JOIN\n(SELECT STR_TO_DATE(DATE_FORMAT(qm.dateQM, \"%Y-%m-01\"), \"%Y-%m-%d\") AS time_sec, COUNT(lst.keyanalyseur) as 'CO12e'\n\t\t\t\tFROM\n\t\t\t\t    serieqm as qm,\n\t\t\t\t    listeanalyseur as lst,\n\t\t\t\t    listedefinitionanalyseur AS def\n\t\t\t\tWHERE\n\t\t\t\t    qm.QMStatus = 0\n\t\t\t\t    AND qm.IDanalyseur = lst.keyanalyseur\n\t\t\t\t    AND lst.IDanalyseur = def.idanalyseur\n\t\t\t\t    AND qm.dateQM >= $__timeFrom()\n\t\t\t\t    AND def.NomAnalyseur = \"CO12e\"\n        GROUP BY time_sec) AS filterdata\nON fulldata.time_sec = filterdata.time_sec ORDER BY time_sec",
+          "refId": "D"
+        },
+        {
+          "alias": "",
+          "format": "time_series",
+          "rawSql": "SELECT fulldata.time_sec,  MP101m FROM\n(SELECT STR_TO_DATE(DATE_FORMAT(qm.dateQM, \"%Y-%m-01\"), \"%Y-%m-%d\") AS time_sec FROM serieqm as qm WHERE qm.dateQM >= $__timeFrom() GROUP BY time_sec) AS fulldata\nLEFT JOIN\n(SELECT STR_TO_DATE(DATE_FORMAT(qm.dateQM, \"%Y-%m-01\"), \"%Y-%m-%d\") AS time_sec, COUNT(lst.keyanalyseur) as 'MP101m'\n\t\t\t\tFROM\n\t\t\t\t    serieqm as qm,\n\t\t\t\t    listeanalyseur as lst,\n\t\t\t\t    listedefinitionanalyseur AS def\n\t\t\t\tWHERE\n\t\t\t\t    qm.QMStatus = 0\n\t\t\t\t    AND qm.IDanalyseur = lst.keyanalyseur\n\t\t\t\t    AND lst.IDanalyseur = def.idanalyseur\n\t\t\t\t    AND qm.dateQM >= $__timeFrom()\n\t\t\t\t    AND def.NomAnalyseur = \"MP101m\"\n        GROUP BY time_sec) AS filterdata\nON fulldata.time_sec = filterdata.time_sec ORDER BY time_sec",
+          "refId": "E"
+        },
+        {
+          "alias": "",
+          "format": "time_series",
+          "rawSql": "SELECT fulldata.time_sec,  O342e FROM\n(SELECT STR_TO_DATE(DATE_FORMAT(qm.dateQM, \"%Y-%m-01\"), \"%Y-%m-%d\") AS time_sec FROM serieqm as qm WHERE qm.dateQM >= $__timeFrom() GROUP BY time_sec) AS fulldata\nLEFT JOIN\n(SELECT STR_TO_DATE(DATE_FORMAT(qm.dateQM, \"%Y-%m-01\"), \"%Y-%m-%d\") AS time_sec, COUNT(lst.keyanalyseur) as 'O342e'\n\t\t\t\tFROM\n\t\t\t\t    serieqm as qm,\n\t\t\t\t    listeanalyseur as lst,\n\t\t\t\t    listedefinitionanalyseur AS def\n\t\t\t\tWHERE\n\t\t\t\t    qm.QMStatus = 0\n\t\t\t\t    AND qm.IDanalyseur = lst.keyanalyseur\n\t\t\t\t    AND lst.IDanalyseur = def.idanalyseur\n\t\t\t\t    AND qm.dateQM >= $__timeFrom()\n\t\t\t\t    AND def.NomAnalyseur = \"O342e\"\n        GROUP BY time_sec) AS filterdata\nON fulldata.time_sec = filterdata.time_sec ORDER BY time_sec",
+          "refId": "F"
+        },
+        {
+          "alias": "",
+          "format": "time_series",
+          "rawSql": "SELECT fulldata.time_sec,  CNH3e FROM\n(SELECT STR_TO_DATE(DATE_FORMAT(qm.dateQM, \"%Y-%m-01\"), \"%Y-%m-%d\") AS time_sec FROM serieqm as qm WHERE qm.dateQM >= $__timeFrom() GROUP BY time_sec) AS fulldata\nLEFT JOIN\n(SELECT STR_TO_DATE(DATE_FORMAT(qm.dateQM, \"%Y-%m-01\"), \"%Y-%m-%d\") AS time_sec, COUNT(lst.keyanalyseur) as 'CNH3e'\n\t\t\t\tFROM\n\t\t\t\t    serieqm as qm,\n\t\t\t\t    listeanalyseur as lst,\n\t\t\t\t    listedefinitionanalyseur AS def\n\t\t\t\tWHERE\n\t\t\t\t    qm.QMStatus = 0\n\t\t\t\t    AND qm.IDanalyseur = lst.keyanalyseur\n\t\t\t\t    AND lst.IDanalyseur = def.idanalyseur\n\t\t\t\t    AND qm.dateQM >= $__timeFrom()\n\t\t\t\t    AND def.NomAnalyseur = \"CNH3e\"\n        GROUP BY time_sec) AS filterdata\nON fulldata.time_sec = filterdata.time_sec ORDER BY time_sec",
+          "refId": "G"
+        },
+        {
+          "alias": "",
+          "format": "time_series",
+          "rawSql": "SELECT fulldata.time_sec,  CTRSe FROM\n(SELECT STR_TO_DATE(DATE_FORMAT(qm.dateQM, \"%Y-%m-01\"), \"%Y-%m-%d\") AS time_sec FROM serieqm as qm WHERE qm.dateQM >= $__timeFrom() GROUP BY time_sec) AS fulldata\nLEFT JOIN\n(SELECT STR_TO_DATE(DATE_FORMAT(qm.dateQM, \"%Y-%m-01\"), \"%Y-%m-%d\") AS time_sec, COUNT(lst.keyanalyseur) as 'CTRSe'\n\t\t\t\tFROM\n\t\t\t\t    serieqm as qm,\n\t\t\t\t    listeanalyseur as lst,\n\t\t\t\t    listedefinitionanalyseur AS def\n\t\t\t\tWHERE\n\t\t\t\t    qm.QMStatus = 0\n\t\t\t\t    AND qm.IDanalyseur = lst.keyanalyseur\n\t\t\t\t    AND lst.IDanalyseur = def.idanalyseur\n\t\t\t\t    AND qm.dateQM >= $__timeFrom()\n\t\t\t\t    AND def.NomAnalyseur = \"CTRSe\"\n        GROUP BY time_sec) AS filterdata\nON fulldata.time_sec = filterdata.time_sec ORDER BY time_sec",
+          "refId": "H"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": "1y",
+      "timeShift": null,
+      "title": "Analyzer tested",
+      "tooltip": {
+        "shared": true,
+        "sort": 2,
+        "value_type": "individual"
+      },
+      "transparent": false,
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "short",
+          "label": "",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": false
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    }
+  ],
+  "refresh": "30s",
+  "schemaVersion": 16,
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": []
+  },
+  "time": {
+    "from": "now-6h",
+    "to": "now"
+  },
+  "timepicker": {
+    "hidden": false,
+    "refresh_intervals": [
+      "10s",
+      "30s",
+      "1m",
+      "5m"
+    ],
+    "time_options": [
+      "5m",
+      "15m",
+      "1h",
+      "6h",
+      "12h",
+      "24h",
+      "2d",
+      "7d",
+      "30d"
+    ]
+  },
+  "timezone": "utc",
+  "title": "Surveillance Neptune kiosk",
+  "uid": "VDJfIV7Zz",
+  "version": 19
+}
